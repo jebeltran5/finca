@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('devices', function (Blueprint $table) {
+        Schema::create('crops', function (Blueprint $table) {
             $table->id();
-            $table->char('type_sensor');
-            $table->char('state');
-            $table->unsignedBigInteger('id_state');
+            $table->string('type_crop');
+            $table->date('sowing_date');
+            $table->unsignedBigInteger('id_lot');
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('devices');
+        Schema::dropIfExists('crops');
     }
 };

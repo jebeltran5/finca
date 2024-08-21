@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('devices', function (Blueprint $table) {
+        Schema::create('alerts', function (Blueprint $table) {
             $table->id();
-            $table->char('type_sensor');
-            $table->char('state');
-            $table->unsignedBigInteger('id_state');
+            $table->timestamp('hour_date');
+            $table->char('type_alert');
+            $table->char('recorded_value');
+            $table->string('description');
+            $table->unsignedBigInteger('id_record');
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('devices');
+        Schema::dropIfExists('alerts');
     }
 };
