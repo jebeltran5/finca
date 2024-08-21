@@ -20,6 +20,16 @@
             </div>
 
             <div class="mt-4">
+                <x-label for="type_identification" value="{{ __('Type_identification') }}" />
+                <x-input id="type_identification" class="block mt-1 w-full" type="text" name="type_identification" :value="old('type_identification')" required  />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="identification" value="{{ __('Identification') }}" />
+                <x-input id="identification" class="block mt-1 w-full" type="text" name="identification" :value="old('identification')" required />
+            </div>
+
+            <div class="mt-4">
                 <x-label for="password" value="{{ __('Password') }}" />
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
