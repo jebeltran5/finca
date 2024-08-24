@@ -21,8 +21,16 @@
 
             <div class="mt-4">
                 <x-label for="type_identification" value="{{ __('Type_identification') }}" />
-                <x-input id="type_identification" class="block mt-1 w-full" type="text" name="type_identification" :value="old('type_identification')" required  />
+                <select id="type_identification" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 
+                       focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 
+                       sm:text-sm rounded-md" name="type_identification" required>
+                    <option value="">Selecione el tipo de identificacion</option>
+                    <option value="cedula" {{ old('type_identification') == 'cedula' ? 'selected' : '' }}>Cedula</option>
+                    <option value="passport" {{ old('type_identification') == 'passport' ? 'selected' : '' }}>Pasaporte</option>
+                    <option value="nit" {{ old('type_identification') == 'nit' ? 'selected' : '' }}>Nit</option>
+                </select>
             </div>
+            
 
             <div class="mt-4">
                 <x-label for="identification" value="{{ __('Identification') }}" />
