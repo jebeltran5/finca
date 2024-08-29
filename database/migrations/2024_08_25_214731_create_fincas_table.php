@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lots', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('dimension');
-            $table->unsignedBigInteger('id_state');
+        Schema::create('fincas', function (Blueprint $table) {
+            $table->id('id_finca');
+            $table->string('nombre');
+            $table->string('propietario');
+            $table->string('location');
+            $table->foreignId('user_id')->constrained();// Relacion con el usuario que administra la finca
             $table->timestamps();
         });
     }
@@ -25,6 +26,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lots');
+        Schema::dropIfExists('fincas');
     }
 };
+

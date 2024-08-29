@@ -52,6 +52,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    protected $casts =[
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
+
     /**
      * Get the attributes that should be cast.
      *
@@ -63,5 +68,17 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    /**
+     * relacion con el modelo Finca (un usuario puede tener muchas fincas).
+     */
+    public function fincas()
+    {
+        return $this->hasMany(Finca::class, 'id_usuario');
+    }
+
+    public function role()
+    {
+        return $this -> belongsTo(Role::class, 'id_usuario');
     }
 }
