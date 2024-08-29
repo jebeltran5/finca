@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\FincaController;
 use App\Http\Controllers\LoteController;
+use App\Http\Controllers\CultivoController;
 
 
 Route::get('/', function () {
@@ -26,5 +27,8 @@ Route::middleware([
 
       // Rutas para la gestión de lotes
       Route::resource('lotes', LoteController::class)->names('lotes');
+
+      // Rutas para gestion de cultivos
+      Route::resource('cultivos', CultivoController::class);
 });
 

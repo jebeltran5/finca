@@ -9,10 +9,13 @@ class Cultivo extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'id_cultivo';
+
     protected $fillable = [
         'tipo_cultivo',
         'fecha_siembra',
         'estado',
+        'id_lote'
     ];
 
     //relacion con el modelo lote(Un cultivo a un lote)

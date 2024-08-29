@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Finca;
 use Illuminate\Http\Request;
 
+
 class FincaController extends Controller
 {
     public function index()
