@@ -1,43 +1,44 @@
-@extends('layouts.app')
+<!-- resources/views/cultivos/create.blade.php -->
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Añadir Cultivo') }}
+        </h2>
+    </x-slot>
 
-@section('content')
-<div class="container">
-    <h1>Añadir Nuevo Cultivo</h1>
-
-    <form action="{{ route('cultivos.store') }}" method="POST">
-        @csrf
-        <div class="mb-3">
-            <label for="tipo_cultivo" class="form-label">Tipo de Cultivo</label>
-            <input type="text" class="form-control" id="tipo_cultivo" name="tipo_cultivo" required>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
+                <h1 class="text-3xl font-bold text-gray-900 mb-6">Añadir Cultivo</h1>
+                
+                <form action="{{ route('cultivos.store') }}" method="POST">
+                    @csrf
+                    <div class="mb-4">
+                        <label for="tipo_cultivo" class="block text-gray-700">Tipo de Cultivo</label>
+                        <input type="text" name="tipo_cultivo" class="form-input mt-1 block w-full" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="fecha_siembra" class="block text-gray-700">Fecha de Siembra</label>
+                        <input type="date" name="fecha_siembra" class="form-input mt-1 block w-full" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="estado" class="block text-gray-700">Estado</label>
+                        <input type="text" name="estado" class="form-input mt-1 block w-full" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="id_lote" class="block text-gray-700">Lote</label>
+                        <select name="id_lote" class="form-select mt-1 block w-full" required>
+                            @foreach($lotes as $lote)
+                                <option value="{{ $lote->id_lote }}">{{ $lote->nombre }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button type="submit" class="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600">Guardar</button>
+                        <a href="{{ route('cultivos.index') }}" class="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600">Cancelar</a>
+                    </div>
+                </form>
+            </div>
         </div>
-
-        <div class="mb-3">
-            <label for="fecha_siembra" class="form-label">Fecha de Siembra</label>
-            <input type="date" class="form-control" id="fecha_siembra" name="fecha_siembra" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="estado" class="form-label">Estado</label>
-            <select class="form-select" id="estado" name="estado" required>
-                <option value="produccion">Producción</option>
-                <option value="recien sembrado">Recién Sembrado</option>
-                <option value="soqueado">Soqueado</option>
-                <option value="brocado">Brocado</option>
-                <option value="normal">Normal</option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label for="id_lote" class="form-label">Lote Asociado</label>
-            <select class="form-select" id="id_lote" name="id_lote" required>
-                @foreach($lotes as $lote)
-                    <option value="{{ $lote->id_lote }}">{{ $lote->nombre }}</option>
-                @endforeach
-            </select>
-        </div>
-
-        <button type="submit" class="btn btn-success">Guardar</button>
-        <a href="{{ route('cultivos.index') }}" class="btn btn-secondary">Cancelar</a>
-    </form>
-</div>
-@endsection
+    </div>
+</x-app-layout>

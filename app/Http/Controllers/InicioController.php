@@ -22,7 +22,7 @@ class InicioController extends Controller
          
          // Depuración
          $tableRows = Finca::select('id_finca', 'nombre', 'propietario')->get();
-         dd($tableRows);
+      
 
          return view('inicio', compact('totalUsuarios', 'totalFincas','chartData', 'tableHeaders','tableRows'));
         
