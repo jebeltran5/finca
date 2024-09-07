@@ -22,6 +22,14 @@
                         <label for="propietario" class="block text-gray-700 font-bold mb-2">Propietario</label>
                         <input type="text" name="propietario" class="form-control border border-gray-300 rounded p-2 w-full" value="{{ $finca->propietario }}" required>
                     </div>
+                    <div class="mb-4">
+                        <label for="latitud" class="block text-gray-700">Latitud</label>
+                        <input type="text" id="latitud" name="latitud" class="form-input mt-1 block w-full" value="{{ number_format($finca->latitud, 2) }}" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="longitud" class="block text-gray-700">Longitud</label>
+                        <input type="text" id="longitud" name="longitud" class="form-input mt-1 block w-full" value="{{ number_format($finca->longitud, 2) }}" required>
+                    </div>
                     <div class="form-group mb-4">
                         <label for="location" class="block text-gray-700 font-bold mb-2">Ubicación</label>
                         <input type="text" name="location" class="form-control border border-gray-300 rounded p-2 w-full" value="{{ $finca->location }}" required>
@@ -35,3 +43,4 @@
         </div>
     </div>
 </x-app-layout>
+

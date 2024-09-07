@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('devices', function (Blueprint $table) {
-            $table->id();
-            $table->char('type_sensor');
-            $table->char('state');
-            $table->unsignedBigInteger('id_state');
-            $table->timestamps();
+        Schema::table('producciones', function (Blueprint $table) {
+            //
+            $table->foreign('id_cultivo')->references('id_cultivo')->on('cultivos')->onDelete('cascade');
         });
     }
 
@@ -25,6 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('devices');
+        Schema::table('producciones', function (Blueprint $table) {
+            //
+            $table->dropForeign(['id_cultivo']);
+        });
     }
 };

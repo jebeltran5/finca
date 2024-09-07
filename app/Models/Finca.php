@@ -17,6 +17,7 @@ class Finca extends Model
     protected $fillable=[
         'nombre',
         'latitud',
+        'longitud',
         'location',
         'user_id',
         'propietario'
@@ -33,4 +34,3 @@ class Finca extends Model
         return $this->hasMany(Lote::class, 'id_finca');
     }
 }
-

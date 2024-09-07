@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('dimension');
             $table->unsignedBigInteger('id_finca');
-           $table->foreign('id_finca')->references('id_finca')->on('fincas')->onDelete('cascade');
+            $table->foreign('id_finca')->references('id_finca')->on('fincas')->onDelete('cascade');
             $table->timestamps();
         });
     }

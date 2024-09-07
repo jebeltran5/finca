@@ -14,8 +14,8 @@ class CultivoController extends Controller
     public function index()
     {
         //pantalla index
-        $cultivos = Cultivo::with('lote')->get();
-        return view('cultivos.index', compact('cultivos'));
+        $cultivos = Cultivo::all();
+        return view('cultivos.index',compact('cultivos'));
         }
 
     /**
@@ -41,7 +41,12 @@ class CultivoController extends Controller
             'id_lote' => 'required|exists:lotes,id_lote',
         ]);
 
-        Cultivo::create($request->all());
+        Cultivo::create([
+            'tipo_cultivo' => $request->tipo_cultivo,
+            'fecha_siembra'=> $request->fecha_siembra,
+            'estado'=> $request->estado,
+            'id_lote'=> $request->id_lote,
+        ]);
 
         return redirect()->route('cultivos.index')->with('success', 'Cultivo creado exitosamente.');
     }

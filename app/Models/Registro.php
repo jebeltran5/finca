@@ -9,6 +9,14 @@ class Registro extends Model
 {
     use HasFactory;
 
+     // Especifica el nombre de la clave primaria
+     protected $primaryKey = 'id_registro';
+
+    protected $table = 'registros';
+
+     // El tipo de clave primaria (si es bigint)
+     protected $keyType = 'int';
+
     protected $fillable = [
         'humedad',
         'temperatura',

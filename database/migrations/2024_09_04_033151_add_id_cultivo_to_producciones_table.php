@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('productions', function (Blueprint $table) {
-            $table->id();
-            $table->date('harvest_date');
-            $table->decimal('amount');
-            $table->char('state');
-            $table->unsignedBigInteger('id_crop');
-            $table->timestamps();
+        Schema::table('producciones', function (Blueprint $table) {
+            //
+            $table->unsignedBigInteger('id_cultivo');  // Agrega la columna id_cultivo
         });
     }
 
@@ -26,6 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('productions');
+        Schema::table('producciones', function (Blueprint $table) {
+            //
+            $table->dropColumn('id_cultivo');  // Elimina la columna id_cultivo
+        });
     }
 };

@@ -15,19 +15,25 @@
                     @csrf
                     <div class="mb-4">
                         <label for="tipo_cultivo" class="block text-gray-700">Tipo de Cultivo</label>
-                        <input type="text" name="tipo_cultivo" class="form-input mt-1 block w-full" required>
+                        <input type="text" id="tipo_cultivo" name="tipo_cultivo" class="form-input mt-1 block w-full" required>
                     </div>
                     <div class="mb-4">
                         <label for="fecha_siembra" class="block text-gray-700">Fecha de Siembra</label>
-                        <input type="date" name="fecha_siembra" class="form-input mt-1 block w-full" required>
+                        <input type="date" id="fecha_siembra" name="fecha_siembra" class="form-input mt-1 block w-full" required>
                     </div>
                     <div class="mb-4">
-                        <label for="estado" class="block text-gray-700">Estado</label>
-                        <input type="text" name="estado" class="form-input mt-1 block w-full" required>
+                    <label for="estado" class="block text-gray-700">Estado</label>
+                    <select id="estado" name="estado" class="form-select mt-1 block w-full" required>
+                          <option value="produccion">Producción</option>
+                          <option value="recien sembrado">Recien Sembrado</option>
+                          <option value="soqueado">Soqueado</option>
+                          <option value="brocado">Brocado</option>
+                          <option value="normal">Normal</option>
+                    </select>
                     </div>
                     <div class="mb-4">
                         <label for="id_lote" class="block text-gray-700">Lote</label>
-                        <select name="id_lote" class="form-select mt-1 block w-full" required>
+                        <select id="id_lote" name="id_lote" class="form-select mt-1 block w-full" required>
                             @foreach($lotes as $lote)
                                 <option value="{{ $lote->id_lote }}">{{ $lote->nombre }}</option>
                             @endforeach

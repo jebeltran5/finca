@@ -22,9 +22,11 @@ class FincaController extends Controller
     {
         // Validación y almacenamiento de datos
             $request->validate([
-            'nombre' => 'required',
-            'location' => 'required',
-            'propietario' => 'required',
+            'nombre' => 'required|string',
+            'location' => 'required|string',
+            'propietario' => 'required|string',
+            'latitud' => 'required|numeric',
+            'longitud' => 'required|numeric',
         ]);
 
 
@@ -54,9 +56,11 @@ class FincaController extends Controller
     {
         // Validación y actualización de datos
              $request->validate([
-            'nombre' => 'required',
-            'location' => 'required',
-            'propietario' => 'required',
+           'nombre' => 'required|string',
+            'location' => 'required|string',
+            'propietario' => 'required|string',
+            'latitud' => 'required|numeric',
+            'longitud' => 'required|numeric',
         ]);
 
         $finca->update($request->all());

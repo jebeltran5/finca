@@ -10,45 +10,38 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
                 <h1 class="text-3xl font-bold text-gray-900 mb-6 text-center">CLOT</h1>
 
-                <!-- Input Fields -->
-                <div class="flex flex-col md:flex-row gap-6 mb-6">
-                    <!-- Column 1 -->
-                    <div class="flex flex-col gap-6 md:w-1/3">
-                        <!-- Finca Input -->
-                        <div class="text-center">
-                            <input type="button" value="Finca" class="w-full text-center bg-red-600 text-white py-4 px-6 rounded-lg shadow-md hover:bg-red-700 cursor-pointer">
-                        </div>
-
-                        <!-- Estación Input -->
-                        <div class="text-center">
-                            <input type="button" value="Estación" class="w-full text-center bg-green-600 text-white py-4 px-6 rounded-lg shadow-md hover:bg-green-700 cursor-pointer">
-                        </div>
-
-                        <!-- Alertas Input -->
-                        <div class="text-center">
-                            <input type="button" value="Alertas" class="w-full text-center bg-red-600 text-white py-4 px-6 rounded-lg shadow-md hover:bg-red-700 cursor-pointer">
-                        </div>
+                <!-- Contenedor Principal para Botones -->
+                <div class="flex gap-6">
+                    <!-- Botones Horizontales (Fincas a Producción) -->
+                    <div class="flex flex-row gap-4 mb-6 w-auto">
+                        <a href="{{ url('/fincas') }}" class="text-center bg-red-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 w-32">
+                            Fincas
+                        </a>
+                        <a href="{{ url('/lotes') }}" class="text-center bg-red-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 w-32">
+                            Lotes
+                        </a>
+                        <a href="{{ url('/cultivos') }}" class="text-center bg-red-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 w-32">
+                            Cultivos
+                        </a>
+                        <a href="{{ url('/producciones') }}" class="text-center bg-red-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 w-32">
+                            Producción
+                        </a>
                     </div>
-                </div>
 
-                <!-- Additional Input Fields -->
-                <div class="flex flex-col md:flex-row gap-6">
-                    <!-- Column 2 -->
-                    <div class="flex flex-row gap-6 md:w-full">
-                        <!-- Registro Input -->
-                        <div class="flex-1">
-                            <input type="button" value="Registro" class="w-full text-center bg-yellow-600 text-white py-4 px-6 rounded-lg shadow-md hover:bg-yellow-700 cursor-pointer">
-                        </div>
-
-                        <!-- Información Input -->
-                        <div class="flex-1">
-                            <input type="button" value="Información" class="w-full text-center bg-blue-600 text-white py-4 px-6 rounded-lg shadow-md hover:bg-blue-700 cursor-pointer">
-                        </div>
-
-                        <!-- Dispositivos Input -->
-                        <div class="flex-1">
-                            <input type="button" value="Dispositivos" class="w-full text-center bg-purple-600 text-white py-4 px-6 rounded-lg shadow-md hover:bg-purple-700 cursor-pointer">
-                        </div>
+                    <!-- Botones Verticales (Estaciones, Dispositivos, Registros, Alertas) -->
+                    <div class="flex flex-col items-start gap-4">
+                        <a href="{{ url('/estaciones') }}" class="text-center bg-red-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 w-32">
+                            Estaciones
+                        </a>
+                        <a href="{{ url('/dispositivos') }}" class="text-center bg-red-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 w-32">
+                            Dispositivos
+                        </a>
+                        <a href="{{ url('/registros') }}" class="text-center bg-red-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 w-32">
+                            Registros
+                        </a>
+                        <a href="{{ url('/alertas') }}" class="text-center bg-red-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 w-32">
+                            Alertas
+                        </a>
                     </div>
                 </div>
             </div>

@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id('id_finca');
             $table->string('nombre');
             $table->string('propietario');
+            $table->decimal('latitud', 10, 8);  // Añadir columna latitud
+            $table->decimal('longitud', 11, 8);
             $table->string('location');
             $table->foreignId('user_id')->constrained();// Relacion con el usuario que administra la finca
             $table->timestamps();

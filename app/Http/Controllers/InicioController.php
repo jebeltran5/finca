@@ -18,7 +18,7 @@ class InicioController extends Controller
 
          ];
          $tableHeaders = ['ID','Nombre','Propietario'];
-        //  $tableRows = Finca::select('id_finca', 'nombre', 'propietario')->get()->toArray();
+         $tableRows = Finca::select('id_finca', 'nombre', 'propietario')->get()->toArray();
          
          // Depuración
          $tableRows = Finca::select('id_finca', 'nombre', 'propietario')->get();

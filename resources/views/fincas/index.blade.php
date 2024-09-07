@@ -20,6 +20,8 @@
                         <tr>
                             <th class="border border-gray-300 px-4 py-2">Nombre</th>
                             <th class="border border-gray-300 px-4 py-2">Propietario</th>
+                            <th class="border border-gray-300 px-4 py-2" >longitud</th>
+                            <th class="border border-gray-300 px-4 py-2">lantitud</th>
                             <th class="border border-gray-300 px-4 py-2">Ubicación</th>
                             <th class="border border-gray-300 px-4 py-2">Acciones</th>
                         </tr>
@@ -29,6 +31,8 @@
                         <tr>
                             <td class="border border-gray-300 px-4 py-2">{{ $finca->nombre }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $finca->propietario }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ number_format($finca->latitud, 2) }}</td>
+                            <td class="border border-gray-300 px-4 py-2">{{ number_format($finca->longitud, 2) }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $finca->location }}</td>
                             <td class="border border-gray-300 px-4 py-2">
                                 <a href="{{ route('fincas.edit', $finca->id_finca) }}" class="bg-yellow-500 text-white py-1 px-2 rounded hover:bg-yellow-600">Editar</a>
@@ -51,3 +55,4 @@
         </div>
     </div>
 </x-app-layout>
+
